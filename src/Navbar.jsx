@@ -21,5 +21,6 @@ const Style = {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 24px;
+    letter-spacing: 1px;
   `
 };
