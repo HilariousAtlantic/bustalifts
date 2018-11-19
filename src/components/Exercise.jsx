@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { times } from "lodash";
+import Set from "./Set";
 
 export default function Exercise({ name, summary, sets }) {
   return (
@@ -10,15 +11,11 @@ export default function Exercise({ name, summary, sets }) {
         <Style.Summary>{summary}</Style.Summary>
       </Style.Info>
       <Style.SetList>
-        {sets.map(set =>
-          set.progress ? (
-            <Style.Progress>{set.progress}</Style.Progress>
-          ) : (
-            <Style.Set>{set.reps}</Style.Set>
-          )
-        )}
+        {sets.map(set => (
+          <Set key={set.id} {...set} />
+        ))}
         {times(5 - sets.length).map(set => (
-          <Style.Set>&#10005;</Style.Set>
+          <Style.Set key={set}>&#10005;</Style.Set>
         ))}
       </Style.SetList>
     </Style.Exercise>
@@ -63,7 +60,9 @@ const Style = {
     height: 48px;
     color: #999;
     font-weight: bold;
+    font-size: 18px;
   `,
+
   Progress: styled.div`
     display: flex;
     justify-content: center;
@@ -74,5 +73,6 @@ const Style = {
     height: 48px;
     color: #ffffff;
     font-weight: bold;
+    font-size: 18px;
   `
 };

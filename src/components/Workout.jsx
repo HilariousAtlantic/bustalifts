@@ -5,8 +5,8 @@ import Exercise from "./Exercise";
 import { useGlobalState } from "../state";
 
 export default function StatefulWorkout({ id, date, exercises, match }) {
-  const { state } = useGlobalState();
-  const workout = state.workouts.find(w => w.id === match.params.id);
+  const { selectors } = useGlobalState();
+  const workout = selectors.workouts.find(w => w.id === match.params.id);
   return <Workout {...workout} />;
 }
 
@@ -15,7 +15,7 @@ export function Workout({ id, date, weight, exercises }) {
     <Style.Workout>
       <Style.Header>{date}</Style.Header>
       {exercises.map(exercise => (
-        <Exercise {...exercise} key={exercise.id} />
+        <Exercise key={exercise.id} {...exercise} />
       ))}
       <Style.BodyWeight>
         <Style.Label>Body Weight</Style.Label>
