@@ -7,7 +7,9 @@ export default function Exercise({ name, sets, reps, weight }) {
     <Style.Exercise>
       <Style.Info>
         <Style.Name>{name}</Style.Name>
-        <Style.Stats>{`${sets}x${reps} ${weight}lb`}</Style.Stats>
+        <Style.Stats>{`${sets}x${reps} ${
+          weight ? weight + "lb" : "BW"
+        }`}</Style.Stats>
       </Style.Info>
       <Style.Sets>
         {Array.from({ length: sets }).map(set => (
@@ -26,6 +28,7 @@ const Style = {
     font-size: 18px;
     background: #ffffff;
     box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.15);
+    margin-top: 16px;
   `,
   Info: styled.div`
     display: flex;

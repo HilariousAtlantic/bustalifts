@@ -7,6 +7,7 @@ const initialState = {
     {
       id: "23ewqw1",
       date: "Monday, November 19",
+      weight: 176,
       exercises: [
         { id: "sdfdfd", name: "Bench Press", sets: 3, reps: 5, weight: 135 },
         { id: "sdfdsf", name: "Chinups", sets: 3, reps: 5, weight: null },
@@ -16,6 +17,7 @@ const initialState = {
     {
       id: "3432jhkh3",
       date: "Wednesday, November 21",
+      weight: 180,
       exercises: [
         { id: "sdfdfd", name: "Overhead Press", sets: 3, reps: 5, weight: 135 },
         { id: "sdfdsf", name: "Barbell Rows", sets: 3, reps: 5, weight: null },
@@ -25,6 +27,7 @@ const initialState = {
     {
       id: "234lkj34",
       date: "Friday, November 23",
+      weight: 152,
       exercises: [
         { id: "sdfdfd", name: "Bench Press", sets: 3, reps: 5, weight: 135 },
         { id: "sdfdsf", name: "Chinups", sets: 3, reps: 5, weight: null },

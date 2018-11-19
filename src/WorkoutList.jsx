@@ -1,26 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { useGlobalState } from "./state";
 
-export default function StatefulWorkoutList(props) {
+export default function StatefulWorkoutList({ match }) {
   const { state } = useGlobalState();
-  return <WorkoutList workouts={state.workouts} />;
+  return <WorkoutList workouts={state.workouts} baseUrl={match.url} />;
 }
 
-export function WorkoutList({ workouts }) {
+export function WorkoutList({ workouts, baseUrl }) {
   return (
     <Style.WorkoutList>
       <Style.Header>Workouts</Style.Header>
       {workouts.map(workout => (
-        <Workout key={workout.id} {...workout} />
+        <Workout
+          key={workout.id}
+          url={`${baseUrl}/${workout.id}`}
+          {...workout}
+        />
       ))}
     </Style.WorkoutList>
   );
 }
 
-function Workout({ date, exercises }) {
+function Workout({ date, exercises, id, url }) {
   return (
     <Style.Workout>
+      <Style.WorkoutLink to={url} />
       <Style.WorkoutDate>{date}</Style.WorkoutDate>
       {exercises.map(exercise => (
         <Style.Exercise key={exercise.id}>
@@ -37,11 +43,19 @@ const Style = {
   WorkoutList: styled.div`
     padding: 16px;
   `,
+  WorkoutLink: styled(NavLink)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  `,
   Header: styled.h1`
     font-size: 24px;
     margin: 8px;
   `,
   Workout: styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 16px;

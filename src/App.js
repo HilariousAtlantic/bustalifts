@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { StateProvider } from "./state";
 import Navbar from "./Navbar";
 import WorkoutList from "./WorkoutList";
+import Workout from "./Workout";
 
 export default function App() {
   return (
@@ -19,8 +20,4 @@ export default function App() {
       </BrowserRouter>
     </StateProvider>
   );
-}
-
-function Workout() {
-  return <div />;
 }
