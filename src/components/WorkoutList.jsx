@@ -31,8 +31,7 @@ function Workout({ date, exercises, id, url }) {
       {exercises.map(exercise => (
         <Style.Exercise key={exercise.id}>
           <Style.ExerciseName>{exercise.name}</Style.ExerciseName>
-          {exercise.sets}&#215;{exercise.reps}{" "}
-          {exercise.weight ? `${exercise.weight}lb` : "BW"}
+          {exercise.summary}
         </Style.Exercise>
       ))}
     </Style.Workout>
