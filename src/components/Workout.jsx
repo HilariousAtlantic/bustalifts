@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Exercise from "./Exercise";
 
-import { useGlobalState } from "./state";
+import { useGlobalState } from "../state";
 
 export default function StatefulWorkout({ id, date, exercises, match }) {
   const { state } = useGlobalState();

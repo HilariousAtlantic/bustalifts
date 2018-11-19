@@ -8,7 +8,7 @@ export default function Exercise({ name, sets, reps, weight }) {
       <Style.Info>
         <Style.Name>{name}</Style.Name>
         <Style.Stats>
-          {sets}x{reps} {weight ? `${weight}lb` : "BW"}
+          {sets}&#215;{reps} {weight ? `${weight}lb` : "BW"}
         </Style.Stats>
       </Style.Info>
       <Style.Sets>

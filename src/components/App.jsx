@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { StateProvider } from "./state";
+import { StateProvider } from "../state";
 import Navbar from "./Navbar";
 import WorkoutList from "./WorkoutList";
 import Workout from "./Workout";

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { useGlobalState } from "./state";
+import { useGlobalState } from "../state";
 
 export default function StatefulWorkoutList({ match }) {
   const { state } = useGlobalState();
@@ -31,7 +31,7 @@ function Workout({ date, exercises, id, url }) {
       {exercises.map(exercise => (
         <Style.Exercise key={exercise.id}>
           <Style.ExerciseName>{exercise.name}</Style.ExerciseName>
-          {exercise.sets}x{exercise.reps}{" "}
+          {exercise.sets}&#215;{exercise.reps}{" "}
           {exercise.weight ? `${exercise.weight}lb` : "BW"}
         </Style.Exercise>
       ))}
@@ -72,7 +72,7 @@ const Style = {
     margin-top: 8px;
   `,
   ExerciseName: styled.span`
-    width: 128px;
+    width: 160px;
     font-weight: bold;
   `
 };
