@@ -36,7 +36,7 @@ const initialState = {
       id: "2sdfdsf",
       name: "Chinups",
       summary: "3×5 BW",
-      sets: ["324jkkj32khj", "3k324jh3jk23", "3j23kj23jlk2"]
+      sets: ["324jkkj32khj", "3jk324jh3jk23", "3j23kj23jlk2"]
     },
     "2asdffd": {
       id: "2asdffd",
@@ -106,8 +106,8 @@ const initialState = {
       weight: null,
       progress: null
     },
-    "3k324jh3jk23": {
-      id: "jk324jh3jk23",
+    "3jk324jh3jk23": {
+      id: "3jk324jh3jk23",
       reps: 5,
       weight: null,
       progress: null
@@ -281,6 +281,7 @@ const ACTION_TYPE_TO_REDUCER = {
 };
 
 function updateSetProgress(state, action) {
+  console.log(state, action);
   return update(state, {
     setsById: {
       [action.id]: { progress: { $set: action.progress } }
