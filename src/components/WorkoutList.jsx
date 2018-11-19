@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { useGlobalState } from "../state";
 
 export default function StatefulWorkoutList({ match }) {
-  const { state } = useGlobalState();
-  return <WorkoutList workouts={state.workouts} baseUrl={match.url} />;
+  const { selectors } = useGlobalState();
+  return <WorkoutList workouts={selectors.workouts} baseUrl={match.url} />;
 }
 
 export function WorkoutList({ workouts, baseUrl }) {
