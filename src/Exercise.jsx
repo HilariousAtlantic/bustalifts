@@ -1,19 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { times } from "lodash";
 
 export default function Exercise({ name, sets, reps, weight }) {
-  console.log("busta");
   return (
     <Style.Exercise>
       <Style.Info>
         <Style.Name>{name}</Style.Name>
-        <Style.Stats>{`${sets}x${reps} ${
-          weight ? weight + "lb" : "BW"
-        }`}</Style.Stats>
+        <Style.Stats>
+          {sets}x{reps} {weight ? `${weight}lb` : "BW"}
+        </Style.Stats>
       </Style.Info>
       <Style.Sets>
-        {Array.from({ length: sets }).map(set => (
-          <Style.Set className="exercise__set" />
+        {times(sets).map(set => (
+          <Style.Set>{reps}</Style.Set>
+        ))}
+        {times(5 - sets).map(set => (
+          <Style.Set>&#10005;</Style.Set>
         ))}
       </Style.Sets>
     </Style.Exercise>
@@ -35,6 +38,7 @@ const Style = {
     justify-content: space-between;
   `,
   Name: styled.div`
+    font-weight: bold;
     text-transform: capitalize;
   `,
   Stats: styled.div`
@@ -50,9 +54,14 @@ const Style = {
     padding-top: 16px;
   `,
   Set: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background: #f3f3f3;
     width: 48px;
     height: 48px;
+    color: #999;
+    font-weight: bold;
   `
 };
