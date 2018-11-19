@@ -5,7 +5,9 @@ import { NavLink } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <Style.Navbar>
-      <Style.Brand to="/">Bustalifts</Style.Brand>
+      <NavLink to="/">
+        <Style.Logo src="/logo.png" />
+      </NavLink>
     </Style.Navbar>
   );
 }
@@ -15,12 +17,7 @@ const Style = {
     background: #2a2a2a;
     padding: 16px;
   `,
-  Brand: styled(NavLink)`
-    color: #f5f5f5;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 24px;
-    letter-spacing: 1px;
+  Logo: styled.img`
+    height: 32px;
   `
 };

@@ -19,7 +19,7 @@ export function Workout({ id, date, weight, exercises }) {
       ))}
       <Style.BodyWeight>
         <Style.Label>Body Weight</Style.Label>
-        <Style.Weight>{`${weight}lb`}</Style.Weight>
+        <Style.Weight>{weight}lb</Style.Weight>
       </Style.BodyWeight>
     </Style.Workout>
   );
