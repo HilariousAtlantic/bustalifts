@@ -1,36 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Style = {
-  Exercise: styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background: white;
-    font-size: 18px;
-  `,
-  Info: styled.div`
-    border-bottom: gray;
-  `,
-  Name: styled.div`
-    text-transform: capitalize;
-  `,
-  Sets: styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    background: white;
-    font-size: 18px;
-  `,
-  Set: styled.div`
-    border-radius: 50%;
-    background: #f3f3f3;
-    width: 48px;
-    height: 48px;
-  `
-};
-
 export default function Exercise({ name, sets, reps, weight }) {
+  console.log("busta");
   return (
     <Style.Exercise>
       <Style.Info>
@@ -45,3 +17,39 @@ export default function Exercise({ name, sets, reps, weight }) {
     </Style.Exercise>
   );
 }
+
+const Style = {
+  Exercise: styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    font-size: 18px;
+    background: #ffffff;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.15);
+  `,
+  Info: styled.div`
+    display: flex;
+    justify-content: space-between;
+  `,
+  Name: styled.div`
+    text-transform: capitalize;
+  `,
+  Stats: styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 2px 2px;
+    border-bottom: solid 2px lightgray;
+  `,
+  Sets: styled.div`
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding-top: 16px;
+  `,
+  Set: styled.div`
+    border-radius: 50%;
+    background: #f3f3f3;
+    width: 48px;
+    height: 48px;
+  `
+};
