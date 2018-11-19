@@ -1,15 +1,12 @@
-import React, { createContext, useReducer } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import reducer from "./reducer";
+import { StateProvider } from "./state";
 import "./App.css";
 
-const StateContext = createContext();
-
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, {});
   return (
     <div className="App">
-      <StateContext.Provider value={{ state, dispatch }}>
+      <StateProvider>
         <BrowserRouter>
           <Switch>
             <Route exact path="/workouts" component={WorkoutList} />
@@ -17,7 +14,7 @@ export default function App() {
             <Redirect to="/workouts" />
           </Switch>
         </BrowserRouter>
-      </StateContext.Provider>
+      </StateProvider>
     </div>
   );
 }
