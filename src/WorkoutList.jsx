@@ -10,7 +10,7 @@ export default function StatefulWorkoutList(props) {
 export function WorkoutList({ workouts }) {
   return (
     <Style.WorkoutList>
-      <h1>Workouts</h1>
+      <Style.Header>Workouts</Style.Header>
       {workouts.map(workout => (
         <Workout key={workout.id} {...workout} />
       ))}
@@ -36,6 +36,10 @@ function Workout({ date, exercises }) {
 const Style = {
   WorkoutList: styled.div`
     padding: 16px;
+  `,
+  Header: styled.h1`
+    font-size: 24px;
+    margin: 8px;
   `,
   Workout: styled.div`
     display: flex;
