@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { StateProvider } from "./state";
+import WorkoutList from "./WorkoutList";
 
 export default function App() {
   return (
@@ -14,10 +15,6 @@ export default function App() {
       </BrowserRouter>
     </StateProvider>
   );
-}
-
-function WorkoutList() {
-  return <div />;
 }
 
 function Workout() {
