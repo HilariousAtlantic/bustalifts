@@ -6,7 +6,7 @@ import { useGlobalState } from "../state";
 
 export default function StatefulWorkout({ id, date, exercises, match }) {
   const { selectors } = useGlobalState();
-  const workout = selectors.workouts.find(w => w.id === match.params.id);
+  const workout = selectors.workoutsById[match.params.id];
   return <Workout {...workout} />;
 }
 

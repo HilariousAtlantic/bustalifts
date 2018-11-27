@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import update from "immutability-helper";
+import { keyBy } from "lodash";
 
 const StateContext = createContext();
 
@@ -250,8 +251,10 @@ export function StateProvider({ children }) {
 }
 
 function getSelectors(state) {
+  const workouts = getWorkoutsSelector(state);
   return {
-    workouts: getWorkoutsSelector(state)
+    workouts: workouts,
+    workoutsById: keyBy(workouts, workout => workout.id)
   };
 }
 
