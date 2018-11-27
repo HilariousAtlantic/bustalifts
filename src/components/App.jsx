@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { StateProvider } from "state";
+import { StoreProvider } from "state/store";
 import Navbar from "components/Navbar";
 import WorkoutList from "components/WorkoutList";
 import Workout from "components/Workout";
 
 export default function App() {
   return (
-    <StateProvider>
+    <StoreProvider>
       <BrowserRouter>
         <>
           <Navbar />
@@ -18,6 +18,6 @@ export default function App() {
           </Switch>
         </>
       </BrowserRouter>
-    </StateProvider>
+    </StoreProvider>
   );
 }

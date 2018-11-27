@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer } from "react";
 import reducer from "state/reducer";
 import selector from "state/selector";
 
-const StateContext = createContext();
+const StoreContext = createContext();
 
 const initialState = {
   workouts: ["23ewqw1", "3432jhkh3", "234lkj34"],
@@ -236,16 +236,16 @@ const initialState = {
   }
 };
 
-export function useGlobalState() {
-  return useContext(StateContext);
+export function useStore() {
+  return useContext(StoreContext);
 }
 
-export function StateProvider({ children }) {
+export function StoreProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const selectors = selector(state);
   return (
-    <StateContext.Provider value={{ state, selectors, dispatch }}>
+    <StoreContext.Provider value={{ state, selectors, dispatch }}>
       {children}
-    </StateContext.Provider>
+    </StoreContext.Provider>
   );
 }

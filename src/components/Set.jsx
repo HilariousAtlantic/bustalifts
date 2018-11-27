@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useGlobalState } from "state";
+import { useStore } from "state/store";
 
 export default function StatefulSet({ id, ...set }) {
-  const { dispatch } = useGlobalState();
+  const { dispatch } = useStore();
   function handleProgressChange(progress) {
     dispatch({
       type: "UPDATE_SET_PROGRESS",

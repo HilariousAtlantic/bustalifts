@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { useGlobalState } from "state";
+import { useStore } from "state/store";
 
 export default function StatefulWorkoutList({ match }) {
-  const { selectors } = useGlobalState();
+  const { selectors } = useStore();
   return <WorkoutList workouts={selectors.workouts} baseUrl={match.url} />;
 }
 

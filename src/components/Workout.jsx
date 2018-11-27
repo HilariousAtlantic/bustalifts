@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Exercise from "components/Exercise";
 
-import { useGlobalState } from "state";
+import { useStore } from "state/store";
 
 export default function StatefulWorkout({ id, date, exercises, match }) {
-  const { selectors } = useGlobalState();
+  const { selectors } = useStore();
   const workout = selectors.workoutsById[match.params.id];
   return <Workout {...workout} />;
 }
