@@ -10,8 +10,8 @@ export default function StatefulWorkoutList({ match }) {
 
 export function WorkoutList({ workouts, baseUrl }) {
   return (
-    <Style.WorkoutList>
-      <Style.Header>Workouts</Style.Header>
+    <Styled.WorkoutList>
+      <Styled.Header>Workouts</Styled.Header>
       {workouts.map(workout => (
         <Workout
           key={workout.id}
@@ -19,26 +19,26 @@ export function WorkoutList({ workouts, baseUrl }) {
           {...workout}
         />
       ))}
-    </Style.WorkoutList>
+    </Styled.WorkoutList>
   );
 }
 
 function Workout({ date, exercises, id, url }) {
   return (
-    <Style.Workout>
-      <Style.WorkoutLink to={url} />
-      <Style.WorkoutDate>{date}</Style.WorkoutDate>
+    <Styled.Workout>
+      <Styled.WorkoutLink to={url} />
+      <Styled.WorkoutDate>{date}</Styled.WorkoutDate>
       {exercises.map(exercise => (
-        <Style.Exercise key={exercise.id}>
-          <Style.ExerciseName>{exercise.name}</Style.ExerciseName>
+        <Styled.Exercise key={exercise.id}>
+          <Styled.ExerciseName>{exercise.name}</Styled.ExerciseName>
           {exercise.summary}
-        </Style.Exercise>
+        </Styled.Exercise>
       ))}
-    </Style.Workout>
+    </Styled.Workout>
   );
 }
 
-const Style = {
+const Styled = {
   WorkoutList: styled.div`
     padding: 16px;
   `,

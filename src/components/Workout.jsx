@@ -12,20 +12,20 @@ export default function StatefulWorkout({ id, date, exercises, match }) {
 
 export function Workout({ id, date, weight, exercises }) {
   return (
-    <Style.Workout>
-      <Style.Header>{date}</Style.Header>
+    <Styled.Workout>
+      <Styled.Header>{date}</Styled.Header>
       {exercises.map(exercise => (
         <Exercise key={exercise.id} {...exercise} />
       ))}
-      <Style.BodyWeight>
-        <Style.Label>Body Weight</Style.Label>
-        <Style.Weight>{weight}lb</Style.Weight>
-      </Style.BodyWeight>
-    </Style.Workout>
+      <Styled.BodyWeight>
+        <Styled.Label>Body Weight</Styled.Label>
+        <Styled.Weight>{weight}lb</Styled.Weight>
+      </Styled.BodyWeight>
+    </Styled.Workout>
   );
 }
 
-const Style = {
+const Styled = {
   Workout: styled.div`
     padding: 16px;
   `,

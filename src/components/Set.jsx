@@ -16,15 +16,15 @@ export default function StatefulSet({ id, ...set }) {
 
 export function Set({ reps, progress, onProgressChange }) {
   return progress ? (
-    <Style.Progress onClick={() => onProgressChange(progress - 1 || null)}>
+    <Styled.Progress onClick={() => onProgressChange(progress - 1 || null)}>
       {progress}
-    </Style.Progress>
+    </Styled.Progress>
   ) : (
-    <Style.Set onClick={() => onProgressChange(reps)}>{reps}</Style.Set>
+    <Styled.Set onClick={() => onProgressChange(reps)}>{reps}</Styled.Set>
   );
 }
 
-const Style = {
+const Styled = {
   Set: styled.div`
     display: flex;
     justify-content: center;

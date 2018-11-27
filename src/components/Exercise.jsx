@@ -5,24 +5,24 @@ import Set from "./Set";
 
 export default function Exercise({ name, summary, sets }) {
   return (
-    <Style.Exercise>
-      <Style.Info>
-        <Style.Name>{name}</Style.Name>
-        <Style.Summary>{summary}</Style.Summary>
-      </Style.Info>
-      <Style.SetList>
+    <Styled.Exercise>
+      <Styled.Info>
+        <Styled.Name>{name}</Styled.Name>
+        <Styled.Summary>{summary}</Styled.Summary>
+      </Styled.Info>
+      <Styled.SetList>
         {sets.map(set => (
           <Set key={set.id} {...set} />
         ))}
         {times(5 - sets.length).map(set => (
-          <Style.Set key={set}>&#10005;</Style.Set>
+          <Styled.Set key={set}>&#10005;</Styled.Set>
         ))}
-      </Style.SetList>
-    </Style.Exercise>
+      </Styled.SetList>
+    </Styled.Exercise>
   );
 }
 
-const Style = {
+const Styled = {
   Exercise: styled.div`
     display: flex;
     flex-direction: column;

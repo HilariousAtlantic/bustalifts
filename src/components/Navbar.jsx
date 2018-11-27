@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
-    <Style.Navbar>
+    <Styled.Navbar>
       <NavLink to="/">
-        <Style.Logo src="/logo.png" />
+        <Styled.Logo src="/logo.png" />
       </NavLink>
-    </Style.Navbar>
+    </Styled.Navbar>
   );
 }
 
-const Style = {
+const Styled = {
   Navbar: styled.div`
     background: #2a2a2a;
     padding: 16px;
