@@ -10,7 +10,6 @@ const ACTION_TYPE_TO_REDUCER = {
 };
 
 function updateSetProgress(state, action) {
-  console.log(state, action);
   return update(state, {
     setsById: {
       [action.id]: { progress: { $set: action.progress } }

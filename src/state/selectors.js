@@ -1,6 +1,6 @@
 import { keyBy } from "lodash";
 
-export default function selector(state) {
+export default function selectors(state) {
   const workouts = getWorkoutsSelector(state);
   return {
     workouts: workouts,
