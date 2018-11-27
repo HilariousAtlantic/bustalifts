@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { useGlobalState } from "../state";
+import { useGlobalState } from "state";
 
 export default function StatefulWorkoutList({ match }) {
   const { selectors } = useGlobalState();

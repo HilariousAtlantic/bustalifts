@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useGlobalState } from "../state";
+import { useGlobalState } from "state";
 
 export default function StatefulSet({ id, ...set }) {
   const { dispatch } = useGlobalState();

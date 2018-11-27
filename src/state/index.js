@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
-import update from "immutability-helper";
-import { keyBy } from "lodash";
+import reducer from "state/reducer";
+import selector from "state/selector";
 
 const StateContext = createContext();
 
@@ -242,52 +242,10 @@ export function useGlobalState() {
 
 export function StateProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const selectors = getSelectors(state);
+  const selectors = selector(state);
   return (
     <StateContext.Provider value={{ state, selectors, dispatch }}>
       {children}
     </StateContext.Provider>
   );
-}
-
-function getSelectors(state) {
-  const workouts = getWorkoutsSelector(state);
-  return {
-    workouts: workouts,
-    workoutsById: keyBy(workouts, workout => workout.id)
-  };
-}
-
-function getWorkoutsSelector(state) {
-  return state.workouts.map(workoutId => {
-    const workout = state.workoutsById[workoutId];
-    return {
-      ...workout,
-      exercises: workout.exercises.map(exerciseId => {
-        const exercise = state.exercisesById[exerciseId];
-        return {
-          ...exercise,
-          sets: exercise.sets.map(setId => state.setsById[setId])
-        };
-      })
-    };
-  });
-}
-
-export function reducer(state, action) {
-  const reducer = ACTION_TYPE_TO_REDUCER[action.type];
-  return reducer ? reducer(state, action) : state;
-}
-
-const ACTION_TYPE_TO_REDUCER = {
-  UPDATE_SET_PROGRESS: updateSetProgress
-};
-
-function updateSetProgress(state, action) {
-  console.log(state, action);
-  return update(state, {
-    setsById: {
-      [action.id]: { progress: { $set: action.progress } }
-    }
-  });
 }

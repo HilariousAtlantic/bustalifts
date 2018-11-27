@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { times } from "lodash";
-import Set from "./Set";
+import Set from "components/Set";
 
 export default function Exercise({ name, summary, sets }) {
   return (
