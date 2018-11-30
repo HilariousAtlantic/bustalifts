@@ -16,7 +16,7 @@ export default function Workout({ match }) {
   const set = exercise && exercise.sets.find(s => !s.complete);
 
   function handleSetComplete(difficulty) {
-    startTimer(difficulty === DIFFICULTY.EASY ? 5 : 180);
+    startTimer(difficulty === DIFFICULTY.EASY ? 90 : 180);
     dispatch({
       type: ACTION.COMPLETE_SET,
       id: set.id,
