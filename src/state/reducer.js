@@ -1,4 +1,5 @@
 import update from "immutability-helper";
+import { ACTION } from "constants/actions";
 
 export default function reducer(state, action) {
   const reducer = ACTION_TYPE_TO_REDUCER[action.type];
@@ -6,13 +7,13 @@ export default function reducer(state, action) {
 }
 
 const ACTION_TYPE_TO_REDUCER = {
-  UPDATE_SET_PROGRESS: updateSetProgress
+  [ACTION.COMPLETE_SET]: completeSet
 };
 
-function updateSetProgress(state, action) {
+function completeSet(state, action) {
   return update(state, {
     setsById: {
-      [action.id]: { progress: { $set: action.progress } }
+      [action.id]: { complete: { $set: true }, failed: { $set: action.failed } }
     }
   });
 }

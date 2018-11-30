@@ -87,151 +87,151 @@ const initialState = {
       id: "6sdfds87fds8",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "7dsf78dsfds8": {
       id: "7dsf78dsfds8",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "7sd7fdsf7sd6": {
       id: "7sd7fdsf7sd6",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "324jkkj32khj": {
       id: "324jkkj32khj",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "3jk324jh3jk23": {
       id: "3jk324jh3jk23",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "3j23kj23jlk2": {
       id: "3j23kj23jlk2",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "324hj2323j43": {
       id: "324hj2323j43",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     },
     "324jk3j423lk": {
       id: "324jk3j423lk",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     },
     "234kj2kl343k": {
       id: "234kj2kl343k",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     },
     "9sdfds87fds8": {
       id: "9sdfds87fds8",
       reps: 5,
       weight: 85,
-      progress: null
+      complete: false
     },
     "9dsf78dsfds8": {
       id: "9dsf78dsfds8",
       reps: 5,
       weight: 85,
-      progress: null
+      complete: false
     },
     "9sd7fdsf7sd6": {
       id: "9sd7fdsf7sd6",
       reps: 5,
       weight: 85,
-      progress: null
+      complete: false
     },
     "10dfds87fds8": {
       id: "10dfds87fds8",
       reps: 5,
       weight: 155,
-      progress: null
+      complete: false
     },
     "10sf78dsfds8": {
       id: "10sf78dsfds8",
       reps: 5,
       weight: 155,
-      progress: null
+      complete: false
     },
     "10d7fdsf7sd6": {
       id: "10d7fdsf7sd6",
       reps: 5,
       weight: 155,
-      progress: null
+      complete: false
     },
     "11dfds87fds8": {
       id: "11dfds87fds8",
       reps: 5,
       weight: 205,
-      progress: null
+      complete: false
     },
     "2sdfds87fds8": {
       id: "2sdfds87fds8",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "2dsf78dsfds8": {
       id: "2dsf78dsfds8",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "2sd7fdsf7sd6": {
       id: "2sd7fdsf7sd6",
       reps: 5,
       weight: 135,
-      progress: null
+      complete: false
     },
     "224jkkj32khj": {
       id: "224jkkj32khj",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "2k324jh3jk23": {
       id: "2k324jh3jk23",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "2j23kj23jlk2": {
       id: "2j23kj23jlk2",
       reps: 5,
       weight: null,
-      progress: null
+      complete: false
     },
     "224hj2323j43": {
       id: "224hj2323j43",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     },
     "224jk3j423lk": {
       id: "224jk3j423lk",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     },
     "334kj2kl343k": {
       id: "334kj2kl343k",
       reps: 5,
       weight: 185,
-      progress: null
+      complete: false
     }
   }
 };
