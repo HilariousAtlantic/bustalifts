@@ -65,7 +65,7 @@ function Set({ weight, reps, onComplete }) {
   return (
     <Styled.Set>
       <Styled.Weight>
-        {reps} Reps × {weight}lb
+        {reps} Reps × {weight ? `${weight}lb` : "BW"}
       </Styled.Weight>
       <Styled.Spacer />
       <Styled.Plates>
